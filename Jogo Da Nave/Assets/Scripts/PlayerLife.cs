@@ -7,8 +7,12 @@ public class PlayerLife : MonoBehaviour
 {
     public Slider barraDeVidaDoJogador;
 
+    public GameObject escudoDoJogador;
+
     public int vidaMaximaPlayer;
     public int vidaAtualPlayer;
+    public int vidaMaximaDoEscudo;
+    public int vidaAtualEscudo;
 
     public bool escudoPlayer;
 
@@ -18,6 +22,8 @@ public class PlayerLife : MonoBehaviour
         vidaAtualPlayer = vidaMaximaPlayer;
         barraDeVidaDoJogador.maxValue = vidaMaximaPlayer;
         barraDeVidaDoJogador.value = vidaAtualPlayer;
+
+        escudoDoJogador.SetActive(false);
     }
 
     // Update is called once per frame
@@ -26,17 +32,37 @@ public class PlayerLife : MonoBehaviour
         
     }
 
+    public void AtivarEscudoDoPlayer()
+    {
+        vidaAtualEscudo = vidaMaximaDoEscudo;
+       escudoDoJogador.SetActive(true);
+       escudoPlayer = true;
+    }
+
     public void DanoaoPlayer(int danoParaReceber)
     {
         if(escudoPlayer == false)
         {
             vidaAtualPlayer -= danoParaReceber;
             barraDeVidaDoJogador.value = vidaAtualPlayer;
-        }
 
+            
         if(vidaAtualPlayer <= 0)
         {
             Debug.Log("Game Over");
         }
+            
+        }
+        else
+        {
+            vidaAtualEscudo -= danoParaReceber;
+            
+            if(vidaAtualEscudo <= 0)
+            {
+                escudoDoJogador.SetActive(false);
+                escudoPlayer = false;
+            }
+        }
+        
     }
 }
