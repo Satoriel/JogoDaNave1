@@ -22,6 +22,7 @@ public class PlayerLife : MonoBehaviour
         vidaAtualPlayer = vidaMaximaPlayer;
         barraDeVidaDoJogador.maxValue = vidaMaximaPlayer;
         barraDeVidaDoJogador.value = vidaAtualPlayer;
+        vidaAtualEscudo = vidaMaximaDoEscudo;
 
         escudoDoJogador.SetActive(false);
     }
@@ -37,6 +38,19 @@ public class PlayerLife : MonoBehaviour
         vidaAtualEscudo = vidaMaximaDoEscudo;
        escudoDoJogador.SetActive(true);
        escudoPlayer = true;
+    }
+    public void GanharVida(int vidaParaReceber)
+    {
+        if(vidaAtualPlayer + vidaParaReceber <= vidaMaximaPlayer)
+        {
+            vidaAtualPlayer += vidaParaReceber;
+        }
+        else
+        {
+            vidaAtualPlayer = vidaMaximaPlayer;
+        }
+
+        barraDeVidaDoJogador.value = vidaAtualPlayer;
     }
 
     public void DanoaoPlayer(int danoParaReceber)
