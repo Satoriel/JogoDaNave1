@@ -25,13 +25,12 @@ public class PlayerLaser : MonoBehaviour
       transform.Translate(Vector3.up * laserVelocidadePlayer * Time.deltaTime);
     }
 
-   void OnTriggerEnter2D(Collider2D other)
+   void OnCollisionEnter2D(Collision2D other)
    {
         if(other.gameObject.CompareTag("Inimigo"))
         {
            other.gameObject.GetComponent<EnemyLife>().MachucarInimigo(danoParaDar);
            Destroy(this.gameObject);
-           Debug.Log("Está ativo");
         }
    }
 }

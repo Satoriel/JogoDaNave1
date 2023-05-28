@@ -25,7 +25,7 @@ public class EnemyLaser : MonoBehaviour
         transform.Translate(Vector3.up * laserVelocidade * Time.deltaTime);
     }
 
-   void OnTriggerEnter2D(Collider2D other)
+   void OnCollisionEnter2D(Collision2D other)
    {
         if(other.gameObject.CompareTag("Player"))
         {

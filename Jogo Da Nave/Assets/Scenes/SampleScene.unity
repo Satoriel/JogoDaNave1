@@ -216,6 +216,7 @@ RectTransform:
   m_Children:
   - {fileID: 665147991}
   - {fileID: 1680152383}
+  - {fileID: 1221659784}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -341,7 +342,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 11, y: 7.200012}
+  m_AnchoredPosition: {x: 11, y: 7.199951}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &665147992
@@ -423,9 +424,9 @@ GameObject:
   - component: {fileID: 793830142}
   - component: {fileID: 793830141}
   - component: {fileID: 793830140}
-  - component: {fileID: 793830139}
   - component: {fileID: 793830143}
   - component: {fileID: 793830144}
+  - component: {fileID: 793830139}
   m_Layer: 0
   m_Name: Inimigo Verde
   m_TagString: Inimigo
@@ -446,9 +447,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00606501, y: -7.230055e-10}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.1856848
+  m_Radius: 1.0000002
 --- !u!50 &793830140
 Rigidbody2D:
   serializedVersion: 4
@@ -568,6 +569,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxInimigo: 2
   vidaAtualInimigo: 0
+  pontoParaDar: 15
+--- !u!1 &896629123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 896629125}
+  - component: {fileID: 896629124}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &896629124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896629123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d6e1571d0366a4eaaccc5d8a7c80d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoDoScoreAtual: {fileID: 1221659781}
+  pontuacaoAtual: 0
+--- !u!4 &896629125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896629123}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &960215658
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,6 +645,101 @@ Transform:
   m_Father: {fileID: 1277251715}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1221659780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1221659784}
+  - component: {fileID: 1221659783}
+  - component: {fileID: 1221659781}
+  - component: {fileID: 1221659782}
+  m_Layer: 5
+  m_Name: Texto do Score Atual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1221659781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221659780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 75503eadf468aa84d97c88b5f8ade030, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 70
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'SCORE: 0'
+--- !u!114 &1221659782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221659780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: 5}
+  m_UseGraphicAlpha: 1
+--- !u!222 &1221659783
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221659780}
+  m_CullTransparentMesh: 1
+--- !u!224 &1221659784
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221659780}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 16218229}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 20, y: -15}
+  m_SizeDelta: {x: 824.0917, y: 154.5172}
+  m_Pivot: {x: 0, y: 1}
 --- !u!1 &1277251711
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,10 +750,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1277251715}
   - component: {fileID: 1277251714}
-  - component: {fileID: 1277251713}
-  - component: {fileID: 1277251712}
   - component: {fileID: 1277251716}
   - component: {fileID: 1277251717}
+  - component: {fileID: 1277251713}
+  - component: {fileID: 1277251712}
   m_Layer: 0
   m_Name: Inimigo Azul
   m_TagString: Inimigo
@@ -639,9 +781,9 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!58 &1277251713
-CircleCollider2D:
+  m_Constraints: 0
+--- !u!70 &1277251713
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -653,9 +795,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.016387578, y: -0.010748387}
-  serializedVersion: 2
-  m_Radius: 1.1517693
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.9687505, y: 1.5937504}
+  m_Direction: 0
 --- !u!212 &1277251714
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -754,6 +896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxInimigo: 3
   vidaAtualInimigo: 0
+  pontoParaDar: 10
 --- !u!1 &1378843739
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,6 +1423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxInimigo: 1
   vidaAtualInimigo: 0
+  pontoParaDar: 5
 --- !u!1 &1936081030
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class EnemyLife : MonoBehaviour
 {
     public int vidaMaxInimigo;
     public int vidaAtualInimigo;
+    public int pontoParaDar;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class EnemyLife : MonoBehaviour
 
         if (vidaAtualInimigo <= 0)
         {
+            GameManager.instance.AumentarPontuacao(pontoParaDar);
             Destroy(this.gameObject);
         }
     }

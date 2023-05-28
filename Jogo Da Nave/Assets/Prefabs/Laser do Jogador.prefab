@@ -10,12 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8542912780668422744}
   - component: {fileID: 8542912780668422745}
-  - component: {fileID: 8542912780668422750}
   - component: {fileID: -2272919111347137626}
   - component: {fileID: -8571320195329342231}
+  - component: {fileID: 9172336810032839992}
+  - component: {fileID: -4186808287486446775}
   m_Layer: 0
   m_Name: Laser do Jogador
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,20 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!136 &8542912780668422750
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8542912780668422751}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.17247134
-  m_Height: 0.6161988
-  m_Direction: 1
-  m_Center: {x: 0.007495463, y: 0.012492418, z: 0}
 --- !u!114 &-2272919111347137626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,5 +111,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f39de3deedff5428b762538b3838a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserVelocidade: 10
+  laserVelocidadePlayer: 14
   danoParaDar: 6
+--- !u!61 &9172336810032839992
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8542912780668422751}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.25, y: 0.53125}
+    newSize: {x: 0.25, y: 0.53125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.53125}
+  m_EdgeRadius: 0
+--- !u!50 &-4186808287486446775
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8542912780668422751}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
