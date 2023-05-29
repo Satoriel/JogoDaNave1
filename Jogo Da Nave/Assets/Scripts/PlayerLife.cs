@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerLife : MonoBehaviour
 {
     public Slider barraDeVidaDoJogador;
+    public Slider barraDeVidaDoEscudo;
 
     public GameObject escudoDoJogador;
 
@@ -20,9 +21,15 @@ public class PlayerLife : MonoBehaviour
     void Start()
     {
         vidaAtualPlayer = vidaMaximaPlayer;
+
         barraDeVidaDoJogador.maxValue = vidaMaximaPlayer;
         barraDeVidaDoJogador.value = vidaAtualPlayer;
+
         vidaAtualEscudo = vidaMaximaDoEscudo;
+
+        barraDeVidaDoEscudo.maxValue = vidaMaximaDoEscudo;
+        barraDeVidaDoEscudo.value = vidaAtualEscudo;
+        barraDeVidaDoEscudo.gameObject.SetActive(false);
 
         escudoDoJogador.SetActive(false);
     }
@@ -35,9 +42,11 @@ public class PlayerLife : MonoBehaviour
 
     public void AtivarEscudoDoPlayer()
     {
+        barraDeVidaDoEscudo.gameObject.SetActive(true);
         vidaAtualEscudo = vidaMaximaDoEscudo;
        escudoDoJogador.SetActive(true);
        escudoPlayer = true;
+       barraDeVidaDoEscudo.value = vidaAtualEscudo;
     }
     public void GanharVida(int vidaParaReceber)
     {
@@ -70,11 +79,13 @@ public class PlayerLife : MonoBehaviour
         else
         {
             vidaAtualEscudo -= danoParaReceber;
+            barraDeVidaDoEscudo.value = vidaAtualEscudo;
             
             if(vidaAtualEscudo <= 0)
             {
                 escudoDoJogador.SetActive(false);
                 escudoPlayer = false;
+                barraDeVidaDoEscudo.gameObject.SetActive(false);
             }
         }
         

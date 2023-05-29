@@ -9,13 +9,17 @@ public class Inimigos : MonoBehaviour
     public float cronometroDeDisparo;
     public float enemyVelocidade;
     
+
+    
     
     public float tempoAtualDosLasers;
     public bool inimigoAtirador;
+    public bool inimigoAtivo;
 
     // Start is called before the first frame update
     void Start()
     {
+        inimigoAtivo = false;
         
     }
 
@@ -23,10 +27,15 @@ public class Inimigos : MonoBehaviour
     void Update()
     {
         MovimentarEnemy();
-        if (inimigoAtirador == true)
+        if (inimigoAtirador == true && inimigoAtivo == true)
         {
             AtirarLaser();
         }
+    }
+
+    public void AtivarInimigo()
+    {
+        inimigoAtivo = true;
     }
 
     private void MovimentarEnemy()

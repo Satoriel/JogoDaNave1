@@ -7,6 +7,11 @@ public class EnemyLife : MonoBehaviour
     public int vidaMaxInimigo;
     public int vidaAtualInimigo;
     public int pontoParaDar;
+    public int chanceParaDroppar;
+
+    public GameObject itemDroppavel;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +31,14 @@ public class EnemyLife : MonoBehaviour
         if (vidaAtualInimigo <= 0)
         {
             GameManager.instance.AumentarPontuacao(pontoParaDar);
+
+            int numeroAleatorio = Random.Range(0, 100);
+
+            if(numeroAleatorio <= chanceParaDroppar)
+            {
+                Instantiate(itemDroppavel, transform.position, Quaternion.Euler(0f, 0f, 0f));
+            }
+
             Destroy(this.gameObject);
         }
     }
